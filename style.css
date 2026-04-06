@@ -158,3 +158,64 @@ footer { background: #111; color: white; text-align: center; padding: 40px 0; }
     .social-links { justify-content: center; }
     .social-item { width: 100%; justify-content: center; }
 }
+
+/* --- AJUSTES RESPONSIVOS FINALES --- */
+
+@media (max-width: 1024px) {
+    .container { padding: 0 30px; }
+    .hero-text h1 { font-size: 2.8rem; }
+}
+
+@media (max-width: 768px) {
+    /* Header y Nav */
+    .nav-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+    }
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Hero Section */
+    .hero-banner { height: auto; padding: 100px 0; text-align: center; }
+    .hero-text h1 { font-size: 2.2rem; margin: 0 auto 20px; }
+    .hero-text h1::after { left: 50%; transform: translateX(-50%); }
+    .features-minimal { justify-content: center; flex-wrap: wrap; }
+
+    /* Cards */
+    .grid-layout { gap: 15px; }
+    .card, .te1-card {
+        flex: 1 1 calc(50% - 20px); /* Dos por fila en tablets */
+        max-width: 100%;
+    }
+
+    /* Sobre Mí */
+    .about-content { flex-direction: column; text-align: center; }
+    .about-image { max-width: 250px; margin-bottom: 30px; }
+}
+
+@media (max-width: 480px) {
+    /* Todo a una sola columna en teléfonos pequeños */
+    .card, .te1-card {
+        flex: 1 1 100%;
+    }
+    
+    .hero-text h1 { font-size: 1.8rem; }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-item { width: 100%; justify-content: center; }
+
+    /* Ajuste para que las imágenes hover funcionen bien en touch */
+    .card-planos:active .hover-img,
+    .card-te1:active .hover-img,
+    .card-aumento:active .hover-img,
+    .card-municipal:active .hover-img {
+        opacity: 1;
+    }
+}
