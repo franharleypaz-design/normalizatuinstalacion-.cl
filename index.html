@@ -148,17 +148,17 @@
     </section>
 
     <section id="contacto" class="contact-section">
-        <div class="container"> <div class="formulario">
+        <div class="container"> 
+            <div class="formulario">
                 <h2 class="section-title">
                     <i class="fas fa-bolt"></i> Solicita <span>tu servicio eléctrico</span> 
                 </h2>
             </div>
 
             <div class="form-container">
-                <form action="https://formspree.io/f/xdapbabr" method="POST">
+                <form id="my-form" action="https://formspree.io/f/xdapbabr" method="POST">
                     <input type="hidden" name="_subject" value="Nuevo cliente desde la web ⚡">
                     <input type="hidden" name="_language" value="es">
-                    <input type="hidden" name="_next" value="gracias.html">
                     
                     <div class="form-group">
                         <label>Nombre</label>
@@ -176,15 +176,62 @@
                         <label>Cuéntanos tu caso</label>
                         <textarea name="Consulta cliente" rows="5" required placeholder="Ej: Necesito obtener TE1 para empalme nuevo..."></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">Enviar Formulario</button>
+                    <button type="submit" id="submit-btn" class="btn-submit">Enviar Formulario</button>
                 </form>
+                <div id="form-status" style="display:none; margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; font-weight: bold;"></div>
             </div>
         </div> 
-		</section>
+    </section>
 
     <footer>
         <p>&copy; 2026 Normaliza Tu Instalación. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+      var form = document.getElementById("my-form");
+      
+      async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("form-status");
+        var btn = document.getElementById("submit-btn");
+        var data = new FormData(event.target);
+
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        btn.disabled = true;
+
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+              'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            window.location.href = "gracias.html"; 
+          } else {
+            response.json().then(data => {
+              if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+              } else {
+                status.innerHTML = "Oops! Hubo un problema al enviar el formulario";
+              }
+              status.style.display = "block";
+              status.style.backgroundColor = "#ffcccc";
+              status.style.color = "#cc0000";
+              btn.disabled = false;
+              btn.innerHTML = "Enviar Formulario";
+            })
+          }
+        }).catch(error => {
+          status.innerHTML = "Error de conexión. Inténtalo de nuevo.";
+          status.style.display = "block";
+          status.style.backgroundColor = "#ffcccc";
+          btn.disabled = false;
+          btn.innerHTML = "Enviar Formulario";
+        });
+      }
+      form.addEventListener("submit", handleSubmit)
+    </script>
 
 </body>
 </html>
