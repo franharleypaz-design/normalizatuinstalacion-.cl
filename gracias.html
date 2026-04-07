@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Mensaje Recibido! - Normaliza Tu Instalación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .thanks-container {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .thanks-icon {
+            font-size: 5rem;
+            color: var(--verde-wa);
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        .btn-back {
+            margin-top: 30px;
+            background: var(--azul-fondo);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-back:hover {
+            background: var(--azul-acento);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container thanks-container">
+        <i class="fas fa-check-circle thanks-icon"></i>
+        <h1 class="section-title">¡Solicitud <span>Enviada con Éxito!</span></h1>
+        <p>Gracias por contactarme. He recibido tu información técnica y te responderé a la brevedad.</p>
+        <p><strong>Gonzalo Aguayo - Ingeniero Eléctrico</strong></p>
+        
+        <a href="index.html" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Volver al Inicio
+        </a>
+    </div>
+
+</body>
+</html>
