@@ -19,8 +19,8 @@
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
                 <li>
-                    <a href="https://wa.me/56926392386?text=Hola,%20quisiera%20normalizar%20mi%20instalación" class="btn-nav btn-nav-ws" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Contáctame
+                    <a href="#contacto" class="btn-nav btn-nav-contact">
+                        <i class="fas fa-envelope"></i> Solicitar evaluación
                     </a>
                 </li>
             </ul>
@@ -45,7 +45,6 @@
         <div class="container">
             <h2 class="section-title">Nuestros Servicios</h2>
             <div class="grid-layout">
-                
                 <div class="card card-planos">
                     <img src="Elaboración de Planos.png" class="hover-img">
                     <div class="card-content">
@@ -54,7 +53,6 @@
                         <p>Planos y Diagramas Certificados</p>
                     </div>
                 </div>
-
                 <div class="card card-te1">
                     <img src="Gestión de TE1.png" class="hover-img">
                     <div class="card-content">
@@ -63,7 +61,6 @@
                         <p>Obtén el TE1 para tu trámite</p>
                     </div>
                 </div>
-
                 <div class="card card-aumento">
                     <img src="Aumento de Capacidad.png" class="hover-img">
                     <div class="card-content">
@@ -72,7 +69,6 @@
                         <p>Incrementa la energía de tu hogar</p>
                     </div>
                 </div>
-
                 <div class="card card-municipal">
                     <img src="Presentación Municipal.png" class="hover-img">
                     <div class="card-content">
@@ -81,7 +77,6 @@
                         <p>Trámites ante la municipalidad</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -139,15 +134,53 @@
                 
                 <div class="social-links">
                     <a href="mailto:gonzalo.aguayo7@gmail.com" class="social-item mail">
-                        <i class="fas fa-envelope"></i> Correo Electrónico
+                        <i class="fas fa-envelope"></i> Correo
                     </a>
                     <a href="https://www.linkedin.com/in/gonzalo-aguayo-gajardo-a86636180/" target="_blank" class="social-item linkedin">
                         <i class="fab fa-linkedin"></i> Linkedin
+                    </a>
+                    <a href="https://wa.me/56926392386" target="_blank" class="social-item whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="contacto" class="contact-section">
+        <div class="container"> <div class="formulario">
+                <h2 class="section-title">
+                    <i class="fas fa-bolt"></i> Solicita <span>tu servicio eléctrico</span> 
+                </h2>
+            </div>
+
+            <div class="form-container">
+                <form action="https://formspree.io/f/xdapbabr" method="POST">
+                    <input type="hidden" name="_subject" value="Nuevo cliente desde la web ⚡">
+                    <input type="hidden" name="_language" value="es">
+                    <input type="hidden" name="_next" value="gracias.html">
+                    
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" name="Nombre cliente" required placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label>Correo</label>
+                        <input type="email" name="Correo cliente" required placeholder="ejemplo@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" name="Telefono cliente" required placeholder="Ej: +56 9 1234 5678">
+                    </div>
+                    <div class="form-group">
+                        <label>Cuéntanos tu caso</label>
+                        <textarea name="Consulta cliente" rows="5" required placeholder="Ej: Necesito obtener TE1 para empalme nuevo..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Formulario</button>
+                </form>
+            </div>
+        </div> 
+		</section>
 
     <footer>
         <p>&copy; 2026 Normaliza Tu Instalación. Todos los derechos reservados.</p>
